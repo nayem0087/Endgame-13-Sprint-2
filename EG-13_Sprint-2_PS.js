@@ -10,14 +10,27 @@ function reverseString(str) {
 }
 
 // 5ti Example run kore dekhar jonno
-console.log(reverseString("hello"));                  // Output: olleh
-console.log(reverseString("JavaScript"));             // Output: tpircSavaJ
-console.log(reverseString("Madam In Eden Im Adam"));  // Output: madam mI nedE nI madaM
-console.log(reverseString("12345!@#$"));              // Output: $#@!54321
-console.log(reverseString("A"));                      // Output: A
+// console.log(reverseString("hello"));                  // Output: olleh
+// console.log(reverseString("JavaScript"));             // Output: tpircSavaJ
+// console.log(reverseString("Madam In Eden Im Adam"));  // Output: madam mI nedE nI madaM
+// console.log(reverseString("12345!@#$"));              // Output: $#@!54321
+// console.log(reverseString("A"));                      // Output: A
 
 
+// problem - 2
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+function findMax(nums) {
+    return Math.max(...nums);
+}
 
-
+// 5ti Example run kore dekhar jonno
+console.log(findMax([3, 7, 2, 9, 5]));          // Output: 9
+console.log(findMax([-1, -5, -3, -9]));         // Output: -1 (Negative numbers)
+console.log(findMax([42]));                     // Output: 42 (Single element)
+console.log(findMax([10, 20, 30, 20, 10]));     // Output: 30 (Duplicate values)
+console.log(findMax([0, 100, 50, 99]));         // Output: 100
 
 
