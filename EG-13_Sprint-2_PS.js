@@ -18,6 +18,7 @@ function reverseString(str) {
 
 
 // problem - 2
+
 /**
  * @param {number[]} nums
  * @return {number}
@@ -27,10 +28,28 @@ function findMax(nums) {
 }
 
 // 5ti Example run kore dekhar jonno
-console.log(findMax([3, 7, 2, 9, 5]));          // Output: 9
-console.log(findMax([-1, -5, -3, -9]));         // Output: -1 (Negative numbers)
-console.log(findMax([42]));                     // Output: 42 (Single element)
-console.log(findMax([10, 20, 30, 20, 10]));     // Output: 30 (Duplicate values)
-console.log(findMax([0, 100, 50, 99]));         // Output: 100
+// console.log(findMax([3, 7, 2, 9, 5]));          // Output: 9
+// console.log(findMax([-1, -5, -3, -9]));         // Output: -1 (Negative numbers)
+// console.log(findMax([42]));                     // Output: 42 (Single element)
+// console.log(findMax([10, 20, 30, 20, 10]));     // Output: 30 (Duplicate values)
+// console.log(findMax([0, 100, 50, 99]));         // Output: 100
 
+
+// problem - 3
+
+/**
+ * @param {string} str
+ * @return {boolean}
+ */
+function isPalindrome(str) {
+    const reversed = str.split('').reverse().join('');
+    return str === reversed;
+}
+
+// 5ti Example
+console.log(isPalindrome("racecar")); // Output: true
+console.log(isPalindrome("hello"));   // Output: false
+console.log(isPalindrome("madam"));   // Output: true
+console.log(isPalindrome("level"));   // Output: true
+console.log(isPalindrome("world"));   // Output: false
 
