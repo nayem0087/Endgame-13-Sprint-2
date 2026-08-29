@@ -153,22 +153,80 @@ function groupAnagrams(strs) {
     return Object.values(map);
 }
 
+// // 5ti Example
+// console.log(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]));
+// // Output: [["eat", "tea", "ate"], ["tan", "nat"], ["bat"]]
+
+// console.log(groupAnagrams([""]));
+// // Output: [[""]]
+
+// console.log(groupAnagrams(["a"]));
+// // Output: [["a"]]
+
+// console.log(groupAnagrams(["listen", "silent", "enlist", "inlets"]));
+// // Output: [["listen", "silent", "enlist", "inlets"]]
+
+// console.log(groupAnagrams(["cat", "dog", "tac"]));
+// // Output: [["cat", "tac"], ["dog"]]
+
+
+// problem - 9
+
+/**
+ * @param {string} s
+ * @return {number}
+ */
+function lengthOfLongestSubstring(s) {
+    let seen = new Set();
+    let left = 0;
+    let maxLength = 0;
+
+    for (let right = 0; right < s.length; right++) {
+        while (seen.has(s[right])) {
+            seen.delete(s[left]);
+            left++;
+        }
+        seen.add(s[right]);
+        maxLength = Math.max(maxLength, right - left + 1);
+    }
+
+    return maxLength;
+}
+
 // 5ti Example
-console.log(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]));
-// Output: [["eat", "tea", "ate"], ["tan", "nat"], ["bat"]]
+// console.log(lengthOfLongestSubstring("abcabcbb")); // Output: 3 ("abc")
+// console.log(lengthOfLongestSubstring("bbbbb"));    // Output: 1 ("b")
+// console.log(lengthOfLongestSubstring("pwwkew"));   // Output: 3 ("wke")
+// console.log(lengthOfLongestSubstring(""));         // Output: 0 (Empty string)
+// console.log(lengthOfLongestSubstring("au"));       // Output: 2 ("au")
 
-console.log(groupAnagrams([""]));
-// Output: [[""]]
 
-console.log(groupAnagrams(["a"]));
-// Output: [["a"]]
 
-console.log(groupAnagrams(["listen", "silent", "enlist", "inlets"]));
-// Output: [["listen", "silent", "enlist", "inlets"]]
+// problem - 10 
 
-console.log(groupAnagrams(["cat", "dog", "tac"]));
-// Output: [["cat", "tac"], ["dog"]]
+/**
+ * @param {Object} obj
+ * @return {Object}
+ */
+function deepClone(obj) {
+    return structuredClone(obj);
+}
 
+// 5ti Example
+const original1 = { a: 1, b: { c: 2 } };
+console.log(deepClone(original1)); // Output: { a: 1, b: { c: 2 } }
+
+const original2 = { name: "John", address: { city: "Dhaka", zip: 1207 } };
+console.log(deepClone(original2)); // Output: { name: 'John', address: { city: 'Dhaka', zip: 1207 } }
+
+const original3 = { items: [1, 2, [3, 4]] };
+console.log(deepClone(original3)); // Output: { items: [ 1, 2, [ 3, 4 ] ] }
+
+const original4 = { x: null, y: undefined, z: true };
+console.log(deepClone(original4)); // Output: { x: null, y: undefined, z: true }
+
+const original5 = { a: { b: { c: { d: 42 } } } };
+console.log(deepClone(original5)); // Output: { a: { b: { c: { d: 42 } } } }
 
 
 
