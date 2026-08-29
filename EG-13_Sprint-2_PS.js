@@ -85,9 +85,53 @@ function countVowels(str) {
 }
 
 // 5ti Example
-console.log(countVowels("javascript"));        // Output: 3 (a, a, i)
-console.log(countVowels("hello world"));       // Output: 3 (e, o, o)
-console.log(countVowels("AEIOU"));             // Output: 5 (Capital vowels)
-console.log(countVowels("rhythm"));            // Output: 0 (No vowels)
-console.log(countVowels("Beautiful Day"));     // Output: 6 (e, a, u, i, u, a)
+// console.log(countVowels("javascript"));        // Output: 3 (a, a, i)
+// console.log(countVowels("hello world"));       // Output: 3 (e, o, o)
+// console.log(countVowels("AEIOU"));             // Output: 5 (Capital vowels)
+// console.log(countVowels("rhythm"));            // Output: 0 (No vowels)
+// console.log(countVowels("Beautiful Day"));     // Output: 6 (e, a, u, i, u, a)
+
+
+// problem - 6 
+
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+function twoSum(nums, target) {
+    for (let i = 0; i < nums.length; i++) {
+        for (let j = i + 1; j < nums.length; j++) {
+            if (nums[i] + nums[j] === target) {
+                return [i, j];
+            }
+        }
+    }
+    return [];
+}
+
+// // 5ti Example
+// console.log(twoSum([2, 7, 11, 15], 9));  // Output: [0, 1]
+// console.log(twoSum([3, 2, 4], 6));       // Output: [1, 2]
+// console.log(twoSum([3, 3], 6));          // Output: [0, 1]
+// console.log(twoSum([1, 5, 3, 7], 8));    // Output: [1, 2]
+// console.log(twoSum([-1, -2, -3, -4], -6)); // Output: [1, 3]
+
+
+// problem - 7
+
+/**
+ * @param {Array} arr
+ * @return {Array}
+ */
+function flattenArray(arr) {
+    return arr.flat(Infinity);
+}
+
+// 5ti Example
+console.log(flattenArray([1, [2, [3, 4], 5]]));        // Output: [1, 2, 3, 4, 5]
+console.log(flattenArray([[1, 2], [3, 4]]));           // Output: [1, 2, 3, 4]
+console.log(flattenArray([1, [2, [3, [4, [5]]]]]));    // Output: [1, 2, 3, 4, 5]
+console.log(flattenArray([1, 2, 3]));                  // Output: [1, 2, 3]
+console.log(flattenArray([[], [1], [2, [3]], []]));     // Output: [1, 2, 3]
 
