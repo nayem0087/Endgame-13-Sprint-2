@@ -129,9 +129,46 @@ function flattenArray(arr) {
 }
 
 // 5ti Example
-console.log(flattenArray([1, [2, [3, 4], 5]]));        // Output: [1, 2, 3, 4, 5]
-console.log(flattenArray([[1, 2], [3, 4]]));           // Output: [1, 2, 3, 4]
-console.log(flattenArray([1, [2, [3, [4, [5]]]]]));    // Output: [1, 2, 3, 4, 5]
-console.log(flattenArray([1, 2, 3]));                  // Output: [1, 2, 3]
-console.log(flattenArray([[], [1], [2, [3]], []]));     // Output: [1, 2, 3]
+// console.log(flattenArray([1, [2, [3, 4], 5]]));        // Output: [1, 2, 3, 4, 5]
+// console.log(flattenArray([[1, 2], [3, 4]]));           // Output: [1, 2, 3, 4]
+// console.log(flattenArray([1, [2, [3, [4, [5]]]]]));    // Output: [1, 2, 3, 4, 5]
+// console.log(flattenArray([1, 2, 3]));                  // Output: [1, 2, 3]
+// console.log(flattenArray([[], [1], [2, [3]], []]));     // Output: [1, 2, 3]
+
+// problem - 8
+
+/**
+ * @param {string[]} strs
+ * @return {string[][]}
+ */
+function groupAnagrams(strs) {
+    const map = {};
+    for (let str of strs) {
+        const sortedKey = str.split('').sort().join('');
+        if (!map[sortedKey]) {
+            map[sortedKey] = [];
+        }
+        map[sortedKey].push(str);
+    }
+    return Object.values(map);
+}
+
+// 5ti Example
+console.log(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]));
+// Output: [["eat", "tea", "ate"], ["tan", "nat"], ["bat"]]
+
+console.log(groupAnagrams([""]));
+// Output: [[""]]
+
+console.log(groupAnagrams(["a"]));
+// Output: [["a"]]
+
+console.log(groupAnagrams(["listen", "silent", "enlist", "inlets"]));
+// Output: [["listen", "silent", "enlist", "inlets"]]
+
+console.log(groupAnagrams(["cat", "dog", "tac"]));
+// Output: [["cat", "tac"], ["dog"]]
+
+
+
 
