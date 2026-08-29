@@ -47,9 +47,27 @@ function isPalindrome(str) {
 }
 
 // 5ti Example
-console.log(isPalindrome("racecar")); // Output: true
-console.log(isPalindrome("hello"));   // Output: false
-console.log(isPalindrome("madam"));   // Output: true
-console.log(isPalindrome("level"));   // Output: true
-console.log(isPalindrome("world"));   // Output: false
+// console.log(isPalindrome("racecar")); // Output: true
+// console.log(isPalindrome("hello"));   // Output: false
+// console.log(isPalindrome("madam"));   // Output: true
+// console.log(isPalindrome("level"));   // Output: true
+// console.log(isPalindrome("world"));   // Output: false
+
+
+// problem - 4
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+function sumArray(nums) {
+    return nums.reduce((acc, curr) => acc + curr, 0);
+}
+
+// 5ti Example
+console.log(sumArray([10, 20, 30, 40])); // Output: 100
+console.log(sumArray([1, 2, 3, 4, 5]));   // Output: 15
+console.log(sumArray([-5, 5, 10]));       // Output: 10
+console.log(sumArray([42]));              // Output: 42
+console.log(sumArray([]));                // Output: 0
 
