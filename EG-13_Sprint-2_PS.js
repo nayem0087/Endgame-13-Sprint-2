@@ -65,9 +65,29 @@ function sumArray(nums) {
 }
 
 // 5ti Example
-console.log(sumArray([10, 20, 30, 40])); // Output: 100
-console.log(sumArray([1, 2, 3, 4, 5]));   // Output: 15
-console.log(sumArray([-5, 5, 10]));       // Output: 10
-console.log(sumArray([42]));              // Output: 42
-console.log(sumArray([]));                // Output: 0
+// console.log(sumArray([10, 20, 30, 40])); // Output: 100
+// console.log(sumArray([1, 2, 3, 4, 5]));   // Output: 15
+// console.log(sumArray([-5, 5, 10]));       // Output: 10
+// console.log(sumArray([42]));              // Output: 42
+// console.log(sumArray([]));                // Output: 0
+
+
+
+// problem - 5
+
+/**
+ * @param {string} str
+ * @return {number}
+ */
+function countVowels(str) {
+    const matches = str.toLowerCase().match(/[aeiou]/g);
+    return matches ? matches.length : 0;
+}
+
+// 5ti Example
+console.log(countVowels("javascript"));        // Output: 3 (a, a, i)
+console.log(countVowels("hello world"));       // Output: 3 (e, o, o)
+console.log(countVowels("AEIOU"));             // Output: 5 (Capital vowels)
+console.log(countVowels("rhythm"));            // Output: 0 (No vowels)
+console.log(countVowels("Beautiful Day"));     // Output: 6 (e, a, u, i, u, a)
 
